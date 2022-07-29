@@ -4,7 +4,7 @@ const Home: NextPage = () => {
   return (
 
         <h1 >
-          Welcome to weather
+          Welcome to weather app!
         </h1>
   )
 }
