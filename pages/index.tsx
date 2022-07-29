@@ -4,7 +4,7 @@ const Home: NextPage = () => {
   return (
 
         <h1 >
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          Welcome to weather
         </h1>
   )
 }
