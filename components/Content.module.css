@@ -1,0 +1,26 @@
+.main {
+    display: flex;
+    flex-direction: row;
+}
+
+
+.background {
+
+    min-width: 60vw;
+    height: 100vh;
+}
+
+.content {
+    min-width: 40vw;
+    height: 100vh;
+}
+
+@media only screen and (max-width: 600px) {
+    .background {
+        min-width: 0vw;
+    }
+    
+    .content {
+        min-width: 100vw;
+    }
+}

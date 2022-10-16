@@ -1,12 +1,14 @@
-import type { NextPage } from 'next'
+import type { NextPage } from 'next';
+import Content from '../components/Content';
+import { Provider } from 'react-redux';
+import { store } from '../app/store';
 
 const Home: NextPage = () => {
-  return (
+	return (
+		<Provider store={store}>
+			<Content />
+		</Provider>
+	);
+};
 
-        <h1 >
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-  )
-}
-
-export default Home
+export default Home;

@@ -1,54 +1,34 @@
-# Weather App
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-I want to build upon the initial repo that I created using an imperative design IN JavaScript. I want to make a weather app that can be used to get the weather of a city. I want to be able to get the weather of a city and I want to be able to get the weather of multiple cities. I want to build the app using the following technologies:
+## Getting Started
 
-    * [React](https://reactjs.org/)
-    * [Redux](https://redux.js.org/)
-    * [Jest](https://jestjs.io/)
+First, run the development server:
 
-## Prerequisites
+```bash
+npm run dev
+# or
+yarn dev
+```
 
-* An [openweathermap](http://openweathermap.org/) API key.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Contributions
+You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
-if you want to contribute to this project or you have found bug's that you would like to report, please feel free to do the following:
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
 
-### Via github (pull requests)
+The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-* Fork this repository in your own github account.
-* Create a personal branch in github.
-* Make changes, commit them, and push them to the main branch.
+## Learn More
 
-### Via github (issues)
+To learn more about Next.js, take a look at the following resources:
 
-* Create an issue in the github repository.
-* Add a description to the issue.
-* Add a link to a relevant code sample.
-* Please include as much information as possible.
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-I will try to respond to all issues within 24 hours.
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-### Testing
+## Deploy on Vercel
 
-Test automation is key in developing good quality applications. Finding bugs in early stages of development is valuable in any software development project. With Jest you can create integration tests for your components and then run them against the production build.
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-### Cloud
-
-*The biggest trend of recent times is developing, deploying and hosting your applications in cloud. Knowing cloud -related technologies is essential for modern IT specialists.*
-
-* Set up the weather service in a free cloud hosting service, e.g. [AWS](https://aws.amazon.com/free/) or [Google Cloud](https://cloud.google.com/free/). As for my own personal choice, I'm using [Github Pages](https://pages.github.com/).*
-
-### ProTips for better development
-
-* When you are coding the application imagine that you are a freelancer developer developing an application for an important customer.
-
-* The app must be ready to deploy and work flawlessly.
-
-* Detailed instructions to run the app should be included in your forked version because a customer would expect detailed instructions also.
-
-* Structure the code and project folder structure in a modular and logical fashion for extra points.
-
-* Try to avoid any bugs or weirdness in the operating logic.
-
-Happy Coding 🚀
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

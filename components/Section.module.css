@@ -1,0 +1,31 @@
+.header {
+    font-size: 1.3em;
+    font-weight: 400;
+    margin: 30px 0px 0px 30px;
+}
+
+.details_item {
+ display: flex;
+ flex-direction: row;
+ margin: 5px 0px 10px 0px;
+justify-content: space-around;
+}
+
+.condition {
+    font-size: large;
+    font-weight: 500;
+    text-align: start;
+}
+
+.temp {
+    font-size: large;
+    font-weight: 500;
+    text-align: end;
+}
+
+.rule {
+    border: 3px solid rgb(255, 255, 255);
+    border-radius: 20px;
+    max-width: 90%;
+    margin: 10px auto;
+}
