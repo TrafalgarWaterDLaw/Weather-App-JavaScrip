@@ -4,21 +4,18 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import classes from './Search.module.css';
 import { FormEvent, useState } from 'react';
 
-import { useAppDispatch } from '../app/hooks';
-import { updateWeather } from '../features/weather/weather-slice'
+interface SearchProps {
+	handleSubmit: (enteredData: string) => string;
+}
 
-const Search: React.FC = () => {
-	
+const Search: React.FC<SearchProps> = ({handleSubmit}) => {
+
 	const [city, setCity] = useState('')
-	/**
-	 * !Never forget the () esle we spend hours debugging again
-	 */
-	const dispatch = useAppDispatch()
 
 	const submitHandler = (event: FormEvent) => {
 		event.preventDefault();
 		if(city.length === 0) return 
-		dispatch(updateWeather(city))
+		handleSubmit(city)
 	}
 	
 	return (

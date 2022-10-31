@@ -22,3 +22,10 @@ justify-content: space-around;
     font-weight: 500;
     text-align: end;
 }
+
+.rule {
+    border: 3px solid rgb(255, 255, 255);
+    border-radius: 20px;
+    max-width: 90%;
+    margin: 10px auto;
+}

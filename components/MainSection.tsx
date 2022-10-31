@@ -3,11 +3,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCloudSun } from '@fortawesome/free-solid-svg-icons';
 
 import { useAppDispatch, useAppSelector } from '../app/hooks';
-import { updateWeather } from '../features/weather/weather-slice'
+import { updateWeather } from '../features/weather/weather-slice';
 
-const MianSection: React.FC = () => {
-	const city = useAppSelector((state) => state.weather.location.name);
+interface MainWeather {
+	name?: string;
+	date?: string;
+	temp?: number;
+}
 
+const MianSection: React.FC<MainWeather> = ({ name, date, temp }) => {
 	return (
 		<>
 			<div className={classes.header_section}>
@@ -16,12 +20,12 @@ const MianSection: React.FC = () => {
 
 			<div className={classes.temp_section}>
 				<div className={classes.condition}>
-					<p>16°</p>
+					<p>{ temp ? `${temp}°` : '16°'}</p>
 				</div>
 
 				<div className={classes.city_name}>
-					<h6>{city}</h6>
-					<p>06:09 - Sunday 9 Dec 22</p>
+					<h6>{name ? name : 'Johannesburg'}</h6>
+					<p> {date ? date : '06:09 - Sunday 9 Dec 22'}</p>
 				</div>
 
 				<div className={classes.cloud_condition}>

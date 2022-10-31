@@ -1,14 +1,27 @@
-import { configureStore, Store } from "@reduxjs/toolkit";
-import weatherReducer from '../features/weather/weather-slice'
+import { configureStore } from '@reduxjs/toolkit';
+// Or from '@reduxjs/toolkit/query/react'
+import { setupListeners } from '@reduxjs/toolkit/query';
+import { weatherApi } from '../features/weather/api';
+import weatherReducer from '../features/weather/weather-slice';
 
 export const store = configureStore({
-    reducer: {
-        weather: weatherReducer
+	reducer: {
+		// Add the generated reducer as a specific top-level slice
+		[weatherApi.reducerPath]: weatherApi.reducer,
     },
-})
+      // Adding the api middleware enables caching, invalidation, polling,
+  // and other useful features of `rtk-query`.
+  middleware: (getDefaultMiddleware) =>
+  getDefaultMiddleware().concat(weatherApi.middleware),
+});
 
-export type AppDispatch = typeof store.dispatch
+
+// optional, but required for refetchOnFocus/refetchOnReconnect behaviors
+// see `setupListeners` docs - takes an optional callback as the 2nd arg for customization
+setupListeners(store.dispatch)
+
+export type AppDispatch = typeof store.dispatch;
 /**
  * * RootState type if infered by typescript
  * */
-export type RootState = ReturnType<typeof store.getState>
+export type RootState = ReturnType<typeof store.getState>;
