@@ -5,6 +5,8 @@ interface DetailsProp {
 	wind?: number;
 	humidity?: number;
 	cloud?: number;
+	date?: string;
+	temp?: number;
 }
 
 const Details: React.FC<DetailsProp> = ({
@@ -12,10 +14,19 @@ const Details: React.FC<DetailsProp> = ({
 	wind,
 	humidity,
 	cloud,
+	date, 
+	temp
 }) => {
 	return (
 		<>
 			<h4 className={classes.header}>Weather Details</h4>
+
+			<div className={classes.details_hiiden_item}>
+				<p className={classes.date}>{ date ? date : '03 Nov 2022'}</p>
+				<p className={classes.hidden_temp}>
+					{temp ? temp : 'Warn and Sunny'}
+				</p>
+			</div>
 
 			<div className={classes.details_item}>
 				<p className={classes.condition}>Description</p>
@@ -36,7 +47,7 @@ const Details: React.FC<DetailsProp> = ({
 
 			<div className={classes.details_item}>
 				<p className={classes.condition}>Wind</p>
-				<p className={classes.temp}>{wind ? `${wind}km/h` : '0km/h}'}</p>
+				<p className={classes.temp}>{wind ? `${wind}km/h` : '0km/h'}</p>
 			</div>
 
 			<hr className={classes.rule} />

@@ -35,7 +35,7 @@ const Forecast: React.FC<ForecastProps> = ({
 			</div>
 
 			<div className={classes.details_item}>
-				<p className={classes.condition}>Average Humidity</p>
+				<p className={classes.condition}>Humidity</p>
 				<p className={classes.temp}>{avgHumidity ? avgHumidity : '100%'}</p>
 			</div>
 		</>

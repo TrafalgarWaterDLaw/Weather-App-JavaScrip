@@ -7,14 +7,22 @@ import Forecast from './Forecast';
 
 import MianSection from './MainSection';
 
-import { useState } from 'react';
+import Modal from './Modal';
+
+import { useState, useEffect } from 'react';
 
 import { useGetCurrentWeatherQuery } from '../features/weather/api';
 
 const Content: React.FC = () => {
+	
+	useEffect(() => {
+		setEnteredString('Johannesburg')
+	}, [])
+
 	const [enterdString, setEnteredString] = useState('');
 	const { data, error, isLoading } = useGetCurrentWeatherQuery(enterdString);
 
+	console.log(error)
 	/**
 	 * ?Setting the correct date format
 	 */
@@ -63,6 +71,8 @@ const Content: React.FC = () => {
 					{data ? (
 						<>
 							<Details
+								date={fullDate}
+								temp={Math.floor(data.current.temp_c)}
 								condition={data.current.condition.text}
 								wind={data.current.wind_kph}
 								cloud={data.current.cloud}
@@ -72,7 +82,7 @@ const Content: React.FC = () => {
 								date={forecastDay}
 								condition={data.forecast.forecastday[0].day.condition.text}
 								minMaxTemp={`${data.forecast.forecastday[0].day.mintemp_c}° - ${data.forecast.forecastday[0].day.maxtemp_c}°`}
-								avgHumidity={`${data.forecast.forecastday[0].day.avghumidity}`}
+								avgHumidity={`${data.forecast.forecastday[0].day.avghumidity}%`}
 							/>
 						</>
 					) : (
@@ -82,6 +92,7 @@ const Content: React.FC = () => {
 						</>
 					)}
 				</Container>
+				<Modal loading={isLoading} />
 			</div>
 		</div>
 	);

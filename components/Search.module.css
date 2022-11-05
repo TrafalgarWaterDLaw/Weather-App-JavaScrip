@@ -24,6 +24,7 @@
 .input:focus {
     background-color: transparent;
     border: 0px solid;
+    color: azure;
 }
 
 
@@ -44,4 +45,8 @@
 
 .icon {
     min-width: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+
 }
