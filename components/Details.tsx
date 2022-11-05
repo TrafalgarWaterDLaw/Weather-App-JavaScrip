@@ -24,7 +24,7 @@ const Details: React.FC<DetailsProp> = ({
 			<div className={classes.details_hiiden_item}>
 				<p className={classes.date}>{ date ? date : '03 Nov 2022'}</p>
 				<p className={classes.hidden_temp}>
-					{temp ? temp : 'Warn and Sunny'}
+					{temp ? `${temp}°` : 'Warn and Sunny'}
 				</p>
 			</div>
 
