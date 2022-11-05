@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { WeatherState } from './weather-type';
 
-const API_KEY = 'ba9509c58ec04e219e0141236223010'
+const API_KEY = '42732ae2525f4de680d142656220511'
 
 // Define a service using a base URL and expected endpoints
 export const weatherApi = createApi({
