@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { WeatherState } from './weather-slice'
+import { WeatherState } from './weather-type';
 
 const API_KEY = 'ba9509c58ec04e219e0141236223010'
 

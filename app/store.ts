@@ -2,7 +2,6 @@ import { configureStore } from '@reduxjs/toolkit';
 // Or from '@reduxjs/toolkit/query/react'
 import { setupListeners } from '@reduxjs/toolkit/query';
 import { weatherApi } from '../features/weather/api';
-import weatherReducer from '../features/weather/weather-slice';
 
 export const store = configureStore({
 	reducer: {
@@ -20,8 +19,3 @@ export const store = configureStore({
 // see `setupListeners` docs - takes an optional callback as the 2nd arg for customization
 setupListeners(store.dispatch)
 
-export type AppDispatch = typeof store.dispatch;
-/**
- * * RootState type if infered by typescript
- * */
-export type RootState = ReturnType<typeof store.getState>;
